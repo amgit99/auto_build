@@ -1,0 +1,25 @@
+//   the keymap can be modified according to your liking, the tc variant fetches the testcases and compiles and runs the program,
+//   the second one just compiles and runs.
+//   the third one is for the windowed layout with the main one for coding and two on the side for input and output text fils.
+//   the fourth is self explainatory.
+[
+	{ 
+		"keys": ["super+'"], "command": "build", "args": {"variant": "tc"}
+	},
+	{ 
+		"keys": ["super+;"], "command": "build", "args": {"variant": "comp_run"}
+	},
+	{
+		"keys": ["super+t"],
+		"command": "set_layout",
+		"args": {
+	        "cols": [0.0, 0.7 ,1.0],
+	        "rows": [0.0, 0.5, 1.0],
+	        "cells": [[0, 0, 1, 2], [1, 0, 2, 1],[1,1,2,2]]
+        }	
+	},
+	{
+      "keys": ["shift+super+backspace"],
+      "command": "delete_current_file"
+  	},	
+]

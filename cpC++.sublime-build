@@ -1,0 +1,19 @@
+//      this build system is for C++ single file programs, the two variants are for fetching testcases and running the program, 
+//      and just doing the later. Both varants can be triggerd by different key-maps which are set in the .sublime-keymap file.
+{
+    "shell_cmd": "g++-13 \"${file}\" -o a && ./a",
+    "variants":
+    [
+        //   the tc version will fetch the testcase of the current problem if file is named correctly[A.cpp, B.cpp, C.cpp ,D...] 
+        //   from the current ongoing contest on codeforces and paste it in the input.txt file and compile and run the code.
+        {
+        "name": "tc",
+        "shell_cmd": "python3 /Users/amit/Documents/kode/cp/cf/test_case.py \"${file_base_name}\" && g++-13 \"${file}\" -o a && ./a"
+        },
+        //   this variant will just compile and run the code assuming the testcases are correctly copied, this is for general use.
+        {
+        "name": "comp_run",
+        "shell_cmd": "g++-13 \"${file}\" -o a && ./a"
+        },
+    ]
+}
